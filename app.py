@@ -97,7 +97,7 @@ def main():
         AgGrid(individual_data, editable=True, theme='alpine')
     elif selected == 'Data GenAI':
         st.subheader("Chat with Data - beta version")
-        st.markdown("We are using llm for data related information", unsafe_allow_html=True)
+        st.markdown("Data provided by the Language Model (LLM) is used for information purposes. Please use it carefully as it may not always be accurate. Verify important details from reliable sources before making decisions based on this data.", unsafe_allow_html=True)
         selectbox = st.selectbox("Select Sheet", sheet_names)
         individual_data = data.parse(selectbox, usecols=None, skiprows=4).dropna(axis=0, how='all').dropna(axis=1, how='all')
         st.write(individual_data)
