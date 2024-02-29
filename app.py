@@ -95,19 +95,6 @@ def main():
         st.markdown(option['description'], unsafe_allow_html=True)
         individual_data = data.parse(selected, usecols=None, skiprows=4).dropna(axis=0, how='all').dropna(axis=1, how='all')
         AgGrid(individual_data, editable=True, theme='alpine')
-
-        input_url = st.text_input("Enter the URL of your website")
-        if input_url:
-            st.markdown(
-                f"""
-                <iframe
-                src="{input_url}"
-                height="450"
-                style="width:100%; border:none;"
-                ></iframe>
-                """,
-                unsafe_allow_html=True
-            )
     
     elif selected == 'Data GenAI':
         st.subheader("Chat with Data - beta version")
