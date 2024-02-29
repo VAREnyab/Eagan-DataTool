@@ -95,6 +95,14 @@ def main():
         st.markdown(option['description'], unsafe_allow_html=True)
         individual_data = data.parse(selected, usecols=None, skiprows=4).dropna(axis=0, how='all').dropna(axis=1, how='all')
         AgGrid(individual_data, editable=True, theme='alpine')
+
+        <iframe
+          src="https://30days.streamlit.app/?embed=true"
+          height="450"
+          style={{ width: "100%", border: "none" }}
+        ></iframe>
+    
+    
     elif selected == 'Data GenAI':
         st.subheader("Chat with Data - beta version")
         st.markdown("Data provided by the Language Model (LLM) is used for information purposes. Please use it carefully as it may not always be accurate. Verify important details from reliable sources before making decisions based on this data.", unsafe_allow_html=True)
